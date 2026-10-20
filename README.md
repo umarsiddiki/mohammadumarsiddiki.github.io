@@ -1,1 +1,0 @@
-# www.mohammadumarsiddiki.github.io
