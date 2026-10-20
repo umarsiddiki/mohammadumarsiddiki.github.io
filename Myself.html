@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | Mohammad Umar Siddiki</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #061b40;
+            color: white;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #04132e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #55c8ff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #55c8ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #061b40, #0756a8, #087cae);
+        }
+
+        .profile {
+            width: 140px;
+            height: 140px;
+            border: 4px solid #55c8ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0b3670;
+            font-size: 55px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 30px #168bff55;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #55c8ff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #d4eaff;
+            max-width: 650px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 28px;
+            background: #55c8ff;
+            color: #04132e;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* General Sections */
+        section {
+            padding: 75px 10%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #55c8ff;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            background: #0b2a56;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #164b85;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #d6e8ff;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #0b2a56;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid #164b85;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #55c8ff;
+            box-shadow: 0 10px 25px #00000025;
+        }
+
+        .card h3 {
+            color: #55c8ff;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #d6e8ff;
+        }
+
+        /* Goals */
+        .goals {
+            background: linear-gradient(135deg, #082652, #074d8c);
+            text-align: center;
+        }
+
+        .goals p {
+            max-width: 750px;
+            margin: auto;
+            color: #e0efff;
+        }
+
+        /* Contact */
+        .contact-box {
+            text-align: center;
+            background: #0b2a56;
+            max-width: 750px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+        }
+
+        .contact-box a {
+            color: #55c8ff;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #04132e;
+            color: #b8d5f5;
+        }
+
+        /* Mobile */
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Umar Siddiki</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#interests">Interests</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <header class="hero" id="home">
+        <div class="profile">US</div>
+
+        <h1>Hello, I'm <span>Umar Siddiki</span></h1>
+
+        <p>
+            Computer Science Student | Aspiring Programmer |
+            Lifelong Learner
+        </p>
+
+        <a href="#about" class="button">Discover My Story</a>
+    </header>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-box">
+            <p>
+                Hello! My name is Mohammad Umar Siddiki.
+                I live in Kathmandu, Nepal, and I am studying
+                Computer Science at Stamford College.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in programming, technology,
+                and web development. I enjoy learning new skills,
+                exploring creative ideas, and improving myself
+                through practical experience.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to become a skilled programmer and
+                use technology to create useful solutions.
+                I believe that consistency, curiosity, and hard
+                work are important for personal and professional growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title">My Education</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>🎓 Computer Science</h3>
+                <p>
+                    Currently pursuing my Bachelor's degree
+                    in Computer Science at Stamford College.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Programming</h3>
+                <p>
+                    Developing my knowledge of programming,
+                    website design, and computer technology.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📚 Continuous Learning</h3>
+                <p>
+                    Learning through study, practice,
+                    and personal projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests -->
+    <section id="interests">
+        <h2 class="section-title">My Interests</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>💻 Programming</h3>
+                <p>Learning to write code and solve problems.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌐 Web Development</h3>
+                <p>Building websites with HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Technology</h3>
+                <p>Exploring new technologies and digital ideas.</p>
+            </div>
+
+            <div class="card">
+                <h3>🤝 Communication</h3>
+                <p>Sharing ideas, working with people, and learning from others.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="goals" id="goals">
+        <h2 class="section-title">My Future Goals</h2>
+
+        <p>
+            My ambition is to become a professional programmer,
+            strengthen my technical knowledge, build meaningful
+            projects, and continue growing both personally
+            and professionally. I want to turn my ideas into
+            practical solutions through technology.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-box">
+            <p>Have a question or want to connect?</p>
+
+            <p>
+                📍 Kathmandu, Nepal
+            </p>
+
+            <p>
+                🌐 Website:
+                <a href="https://mohammadumarsiddiki.com.np">
+                    mohammadumarsiddiki.com.np
+                </a>
+            </p>
+
+            <p>
+                📧 Email:
+                <a href="mailto:umar@mohammadumarsiddiki.com.np">
+                    umar@mohammadumarsiddiki.com.np
+                </a>
+            </p>
+
+            <a href="mailto:umar@mohammadumarsiddiki.com.np"
+               class="button">Send Me an Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Mohammad Umar Siddiki.
+            Made with passion and curiosity.
+        </p>
+    </footer>
+
+</body>
+</html>
+
