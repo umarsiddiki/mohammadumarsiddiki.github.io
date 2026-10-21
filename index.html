@@ -1,234 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Me | Mohammad Umar Siddiki</title>
+    <title>Lets Fly Educational Consultancy | Study Abroad</title>
+
+    <meta name="description"
+        content="Lets Fly Educational Consultancy helps students explore international education opportunities, universities and courses.">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #061b40;
-            color: white;
-            line-height: 1.7;
+            color: #243047;
+            background: #f7f9fc;
+            line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
+        /* HEADER */
+
+        header {
+            background: white;
+            padding: 12px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: #04132e;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 12px #0000000d;
         }
 
         .logo {
-            color: #55c8ff;
-            font-size: 22px;
-            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 65px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         nav a {
-            color: white;
             text-decoration: none;
-            margin-left: 22px;
-            transition: 0.3s;
+            color: #243047;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #55c8ff;
+            color: #f28c28;
         }
 
-        /* Hero Section */
+        /* HERO SECTION */
+
         .hero {
-            min-height: 85vh;
+            min-height: 480px;
+            padding: 80px 8%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #061b40, #0756a8, #087cae);
+            background:
+                linear-gradient(90deg, #062a55ed, #062a5560),
+                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+            color: white;
         }
 
-        .profile {
-            width: 140px;
-            height: 140px;
-            border: 4px solid #55c8ff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #0b3670;
-            font-size: 55px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 30px #168bff55;
+        .hero-content {
+            max-width: 650px;
         }
 
         .hero h1 {
-            font-size: 46px;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 span {
-            color: #55c8ff;
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #d4eaff;
-            max-width: 650px;
+            font-size: 17px;
+            margin-bottom: 28px;
+            max-width: 560px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 28px;
-            background: #55c8ff;
-            color: #04132e;
+            background: #f28c28;
+            color: white;
+            padding: 13px 24px;
             text-decoration: none;
+            border-radius: 6px;
             font-weight: bold;
-            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            margin: 4px;
             transition: 0.3s;
         }
 
         .button:hover {
-            background: white;
-            transform: translateY(-3px);
+            background: #d87312;
+            transform: translateY(-2px);
         }
 
-        /* General Sections */
-        section {
-            padding: 75px 10%;
+        .button-blue {
+            background: #0756a5;
         }
 
-        .section-title {
-            font-size: 32px;
-            color: #55c8ff;
+        .button-blue:hover {
+            background: #043b75;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .section {
+            padding: 65px 7%;
+        }
+
+        .section-heading {
             text-align: center;
             margin-bottom: 35px;
         }
 
-        .about-box {
-            max-width: 850px;
-            margin: auto;
-            background: #0b2a56;
-            padding: 35px;
-            border-radius: 15px;
-            border: 1px solid #164b85;
-            text-align: center;
+        .section-heading h2 {
+            color: #0756a5;
+            font-size: 32px;
+            margin-bottom: 8px;
         }
 
-        .about-box p {
-            color: #d6e8ff;
+        .section-heading p {
+            color: #667085;
         }
 
-        /* Cards */
-        .cards {
+        /* COUNTRY CARDS */
+
+        .countries {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .country-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px #162b4d12;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .country-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px #162b4d20;
+        }
+
+        .country-card img {
+            width: 100%;
+            height: 165px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .country-info {
+            padding: 20px;
+        }
+
+        .country-info h3 {
+            margin-bottom: 8px;
+            color: #0756a5;
+        }
+
+        .country-info p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .country-info a {
+            color: #0756a5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .country-info a:hover {
+            color: #f28c28;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #eaf2fc;
+        }
+
+        .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 22px;
         }
 
-        .card {
-            background: #0b2a56;
-            padding: 28px;
-            border-radius: 14px;
-            border: 1px solid #164b85;
-            transition: 0.3s;
+        .service-card {
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px #162b4d0a;
+            transition: transform 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: #55c8ff;
-            box-shadow: 0 10px 25px #00000025;
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
-        .card h3 {
-            color: #55c8ff;
+        .service-card .icon {
+            font-size: 35px;
+        }
+
+        .service-card h3 {
+            margin: 12px 0;
+            color: #0756a5;
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        /* APPLY */
+
+        .apply {
+            background: white;
+            text-align: center;
+        }
+
+        .apply p {
+            max-width: 650px;
+            margin: 12px auto 24px;
+            color: #667085;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #062a55;
+            color: white;
+            text-align: center;
+            padding: 45px 7%;
+        }
+
+        .contact h2 {
             margin-bottom: 12px;
         }
 
-        .card p {
-            color: #d6e8ff;
+        .contact p {
+            margin: 8px 0;
         }
 
-        /* Goals */
-        .goals {
-            background: linear-gradient(135deg, #082652, #074d8c);
-            text-align: center;
-        }
-
-        .goals p {
-            max-width: 750px;
-            margin: auto;
-            color: #e0efff;
-        }
-
-        /* Contact */
-        .contact-box {
-            text-align: center;
-            background: #0b2a56;
-            max-width: 750px;
-            margin: auto;
-            padding: 35px;
-            border-radius: 15px;
-        }
-
-        .contact-box p {
-            margin: 10px 0;
-        }
-
-        .contact-box a {
-            color: #55c8ff;
+        .contact a {
+            color: #ffbd72;
             text-decoration: none;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 22px;
-            background: #04132e;
-            color: #b8d5f5;
+        .contact a:hover {
+            text-decoration: underline;
         }
 
-        /* Mobile */
+        /* FOOTER */
+
+        footer {
+            padding: 18px;
+            text-align: center;
+            background: #041d3b;
+            color: white;
+            font-size: 13px;
+        }
+
+        /* MOBILE RESPONSIVE */
+
         @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                padding: 15px 5%;
+            }
+
+            .logo img {
+                height: 55px;
+                max-width: 200px;
+            }
+
             nav {
-                flex-direction: column;
+                justify-content: center;
                 gap: 12px;
             }
 
             nav a {
-                margin: 0 7px;
-                font-size: 14px;
+                font-size: 13px;
             }
 
-            .hero h1 {
-                font-size: 32px;
+            .hero {
+                padding: 60px 7%;
+                min-height: 420px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .section {
+                padding: 45px 6%;
             }
 
-            section {
-                padding: 55px 7%;
-            }
-
-            .about-box {
-                padding: 25px;
+            .section-heading h2 {
+                font-size: 27px;
             }
         }
     </style>
@@ -236,173 +339,426 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Umar Siddiki</div>
+    <!-- HEADER WITH LOGO -->
 
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#interests">Interests</a>
-            <a href="#contact">Contact</a>
+    <header>
+
+        <div class="logo">
+            <a href="letsfly.html">
+                <img src="images/lets-fly-logo.png.jpeg" alt="Lets Fly Logo">
+                    alt="Lets Fly Educational Consultancy Logo">
+            </a>
         </div>
-    </nav>
 
-    <!-- Home -->
-    <header class="hero" id="home">
-        <div class="profile">US</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#countries">Countries</a>
+            <a href="#services">Our Services</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <h1>Hello, I'm <span>Umar Siddiki</span></h1>
-
-        <p>
-            Computer Science Student | Aspiring Programmer |
-            Lifelong Learner
-        </p>
-
-        <a href="#about" class="button">Discover My Story</a>
     </header>
 
-    <!-- About Me -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
+    <!-- HERO SECTION -->
 
-        <div class="about-box">
-            <p>
-                Hello! My name is Mohammad Umar Siddiki.
-                I live in Kathmandu, Nepal, and I am studying
-                Computer Science at Stamford College.
-            </p>
+    <section class="hero" id="home">
 
-            <br>
+        <div class="hero-content">
+
+            <h1>Your Journey to International Education Starts Here</h1>
 
             <p>
-                I am interested in programming, technology,
-                and web development. I enjoy learning new skills,
-                exploring creative ideas, and improving myself
-                through practical experience.
+                Explore universities, discover courses and take the next
+                step towards your international education with
+                Lets Fly Educational Consultancy.
             </p>
 
-            <br>
+            <a href="#countries" class="button">Explore Countries</a>
+
+            <a href="#apply" class="button button-blue">Apply Now</a>
+
+        </div>
+
+    </section>
+
+    <!-- COUNTRIES SECTION -->
+
+    <section class="section" id="countries">
+
+        <div class="section-heading">
+
+            <h2>Choose Your Study Destination</h2>
 
             <p>
-                My goal is to become a skilled programmer and
-                use technology to create useful solutions.
-                I believe that consistency, curiosity, and hard
-                work are important for personal and professional growth.
+                Explore international study opportunities around the world.
             </p>
+
         </div>
+
+        <div class="countries">
+
+            <!-- ITALY -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80"
+                    alt="Italy and its historic architecture">
+
+                <div class="country-info">
+
+                    <h3>🇮🇹 Study in Italy</h3>
+
+                    <p>
+                        Explore bachelor's, master's and other study opportunities.
+                    </p>
+
+                    <a href="countries/italy.html">Explore Italy →</a>
+
+                </div>
+
+            </article>
+
+            <!-- GERMANY -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80"
+                    alt="Germany city architecture">
+
+                <div class="country-info">
+
+                    <h3>🇩🇪 Study in Germany</h3>
+
+                    <p>
+                        Discover study options in technology, business and engineering.
+                    </p>
+
+                    <a href="countries/germany.html">Explore Germany →</a>
+
+                </div>
+
+            </article>
+
+            <!-- FRANCE -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
+                    alt="Paris, France">
+
+                <div class="country-info">
+
+                    <h3>🇫🇷 Study in France</h3>
+
+                    <p>
+                        Explore education opportunities across France.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+            <!-- UNITED KINGDOM -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80"
+                    alt="London, United Kingdom">
+
+                <div class="country-info">
+
+                    <h3>🇬🇧 Study in the UK</h3>
+
+                    <p>
+                        Discover degree programmes at UK institutions.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+            <!-- LATVIA -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=800&q=80"
+                    alt="European city architecture">
+
+                <div class="country-info">
+
+                    <h3>🇱🇻 Study in Latvia</h3>
+
+                    <p>
+                        Explore international education opportunities in Latvia.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+            <!-- LITHUANIA -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549640376-8d7b7c1e5f53?auto=format&fit=crop&w=800&q=80"
+                    alt="European university city">
+
+                <div class="country-info">
+
+                    <h3>🇱🇹 Study in Lithuania</h3>
+
+                    <p>
+                        Discover courses and universities in Lithuania.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+            <!-- CHINA -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80"
+                    alt="China architecture">
+
+                <div class="country-info">
+
+                    <h3>🇨🇳 Study in China</h3>
+
+                    <p>
+                        Ask us about medical education, including MBBS, and other courses.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+            <!-- MALTA -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80"
+                    alt="Mediterranean coastal destination">
+
+                <div class="country-info">
+
+                    <h3>🇲🇹 Study in Malta</h3>
+
+                    <p>
+                        Explore available courses and education options in Malta.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+            <!-- CYPRUS -->
+
+            <article class="country-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=800&q=80"
+                    alt="Mediterranean island architecture">
+
+                <div class="country-info">
+
+                    <h3>🇨🇾 Study in Cyprus</h3>
+
+                    <p>
+                        Find out about university and course opportunities in Cyprus.
+                    </p>
+
+                    <a href="#apply">Enquire Now →</a>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </section>
 
-    <!-- Education -->
-    <section id="education">
-        <h2 class="section-title">My Education</h2>
+    <!-- SERVICES SECTION -->
 
-        <div class="cards">
-            <div class="card">
-                <h3>🎓 Computer Science</h3>
-                <p>
-                    Currently pursuing my Bachelor's degree
-                    in Computer Science at Stamford College.
-                </p>
-            </div>
+    <section class="section services" id="services">
 
-            <div class="card">
-                <h3>💻 Programming</h3>
-                <p>
-                    Developing my knowledge of programming,
-                    website design, and computer technology.
-                </p>
-            </div>
+        <div class="section-heading">
 
-            <div class="card">
-                <h3>📚 Continuous Learning</h3>
-                <p>
-                    Learning through study, practice,
-                    and personal projects.
-                </p>
-            </div>
+            <h2>How We Can Help You</h2>
+
+            <p>
+                Guidance for your international education journey.
+            </p>
+
         </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="icon">🎓</div>
+
+                <h3>University Admission</h3>
+
+                <p>
+                    Explore suitable universities and courses for your profile.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">📄</div>
+
+                <h3>Document Guidance</h3>
+
+                <p>
+                    Get guidance on application documents and preparation.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">✈️</div>
+
+                <h3>Visa Guidance</h3>
+
+                <p>
+                    Understand the student visa application process.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="icon">💬</div>
+
+                <h3>Student Counselling</h3>
+
+                <p>
+                    Discuss your study plans and available options with our team.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- Interests -->
-    <section id="interests">
-        <h2 class="section-title">My Interests</h2>
+    <!-- ABOUT US -->
 
-        <div class="cards">
-            <div class="card">
-                <h3>💻 Programming</h3>
-                <p>Learning to write code and solve problems.</p>
+    <section class="section" id="about">
+
+        <div class="about-content">
+
+            <div class="section-heading">
+
+                <h2>About Lets Fly Educational Consultancy</h2>
+
             </div>
 
-            <div class="card">
-                <h3>🌐 Web Development</h3>
-                <p>Building websites with HTML, CSS, and JavaScript.</p>
-            </div>
+            <p>
+                We help students explore international education opportunities
+                by providing guidance on universities, courses, applications
+                and student visa preparation.
+            </p>
 
-            <div class="card">
-                <h3>🚀 Technology</h3>
-                <p>Exploring new technologies and digital ideas.</p>
-            </div>
+            <p>
+                Our aim is to help students understand their study options
+                and prepare for the next step in their educational journey.
+            </p>
 
-            <div class="card">
-                <h3>🤝 Communication</h3>
-                <p>Sharing ideas, working with people, and learning from others.</p>
-            </div>
         </div>
+
     </section>
 
-    <!-- Goals -->
-    <section class="goals" id="goals">
-        <h2 class="section-title">My Future Goals</h2>
+    <!-- APPLY SECTION -->
+
+    <section class="section apply" id="apply">
+
+        <div class="section-heading">
+
+            <h2>Start Your Application</h2>
+
+            <p>
+                Ready to study abroad? Contact our team to discuss your
+                preferred country, qualification and study plans.
+            </p>
+
+            <a class="button"
+                href="mailto:letsflyconsultancy@gmail.com?subject=Study%20Abroad%20Enquiry">
+                Send an Enquiry
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+
+        <h2>Contact Lets Fly Educational Consultancy</h2>
 
         <p>
-            My ambition is to become a professional programmer,
-            strengthen my technical knowledge, build meaningful
-            projects, and continue growing both personally
-            and professionally. I want to turn my ideas into
-            practical solutions through technology.
+            Have questions? Get in touch with our team.
         </p>
+
+        <p>
+            Email:
+            <a href="mailto:letsflyconsultancy@gmail.com">
+                letsflyconsultancy@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Location: Balkumari, Lalitpur, Nepal
+        </p>
+
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
+    <!-- FOOTER -->
 
-        <div class="contact-box">
-            <p>Have a question or want to connect?</p>
-
-            <p>
-                📍 Kathmandu, Nepal
-            </p>
-
-            <p>
-                🌐 Website:
-                <a href="https://mohammadumarsiddiki.com.np">
-                    mohammadumarsiddiki.com.np
-                </a>
-            </p>
-
-            <p>
-                📧 Email:
-                <a href="mailto:umarsiddiqui923@gmail.com">
-                    umarsiddiqui924@gmail.com
-                </a>
-            </p>
-
-            <a href="mailto:umarsiddiqui924@gmail.com"
-               class="button">Send Me an Email</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
+
         <p>
-            &copy; 2026 Mohammad Umar Siddiki.
-            Made with passion and curiosity.
+            &copy; <span id="year"></span>
+            Lets Fly Educational Consultancy.
+            All rights reserved.
         </p>
+
     </footer>
 
-</body>
-</html>
+    <!-- JAVASCRIPT -->
 
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
