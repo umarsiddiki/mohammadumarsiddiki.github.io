@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <title>Lets Fly Educational Consultancy | Study Abroad</title>
 
     <meta name="description"
-          content="Lets Fly Educational Consultancy helps students explore international education opportunities, universities and courses.">
+        content="Lets Fly Educational Consultancy helps students explore international education opportunities, universities and courses.">
 
     <style>
         * {
@@ -27,9 +28,11 @@
             line-height: 1.6;
         }
 
+        /* HEADER */
+
         header {
             background: white;
-            padding: 16px 7%;
+            padding: 12px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,13 +42,16 @@
         }
 
         .logo {
-            font-size: 23px;
-            font-weight: bold;
-            color: #0756a5;
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: #f28c28;
+        .logo img {
+            height: 65px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            display: block;
         }
 
         nav {
@@ -59,11 +65,14 @@
             color: #243047;
             font-size: 14px;
             font-weight: bold;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #f28c28;
         }
+
+        /* HERO SECTION */
 
         .hero {
             min-height: 480px;
@@ -103,15 +112,24 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
+            margin: 4px;
+            transition: 0.3s;
         }
 
         .button:hover {
             background: #d87312;
+            transform: translateY(-2px);
         }
 
         .button-blue {
             background: #0756a5;
         }
+
+        .button-blue:hover {
+            background: #043b75;
+        }
+
+        /* GENERAL SECTIONS */
 
         .section {
             padding: 65px 7%;
@@ -132,6 +150,8 @@
             color: #667085;
         }
 
+        /* COUNTRY CARDS */
+
         .countries {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -143,11 +163,12 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 5px 20px #162b4d12;
-            transition: transform 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .country-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px #162b4d20;
         }
 
         .country-card img {
@@ -178,6 +199,12 @@
             text-decoration: none;
         }
 
+        .country-info a:hover {
+            color: #f28c28;
+        }
+
+        /* SERVICES */
+
         .services {
             background: #eaf2fc;
         }
@@ -193,6 +220,12 @@
             background: white;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 4px 15px #162b4d0a;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
         .service-card .icon {
@@ -203,6 +236,21 @@
             margin: 12px 0;
             color: #0756a5;
         }
+
+        /* ABOUT */
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        /* APPLY */
 
         .apply {
             background: white;
@@ -215,6 +263,8 @@
             color: #667085;
         }
 
+        /* CONTACT */
+
         .contact {
             background: #062a55;
             color: white;
@@ -226,9 +276,20 @@
             margin-bottom: 12px;
         }
 
+        .contact p {
+            margin: 8px 0;
+        }
+
         .contact a {
             color: #ffbd72;
+            text-decoration: none;
         }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
 
         footer {
             padding: 18px;
@@ -238,14 +299,26 @@
             font-size: 13px;
         }
 
+        /* MOBILE RESPONSIVE */
+
         @media (max-width: 650px) {
             header {
                 justify-content: center;
+                padding: 15px 5%;
+            }
+
+            .logo img {
+                height: 55px;
+                max-width: 200px;
             }
 
             nav {
                 justify-content: center;
                 gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
             }
 
             .hero {
@@ -256,16 +329,25 @@
             .section {
                 padding: 45px 6%;
             }
+
+            .section-heading h2 {
+                font-size: 27px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER WITH LOGO -->
+
     <header>
+
         <div class="logo">
-            LETS FLY <span>EDUCATION</span>
+            <a href="letsfly.html">
+                <img src="images/lets-fly-logo.png"
+                    alt="Lets Fly Educational Consultancy Logo">
+            </a>
         </div>
 
         <nav>
@@ -275,11 +357,15 @@
             <a href="#about">About Us</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
     <!-- HERO SECTION -->
+
     <section class="hero" id="home">
+
         <div class="hero-content">
+
             <h1>Your Journey to International Education Starts Here</h1>
 
             <p>
@@ -289,184 +375,332 @@
             </p>
 
             <a href="#countries" class="button">Explore Countries</a>
+
             <a href="#apply" class="button button-blue">Apply Now</a>
+
         </div>
+
     </section>
 
-    <!-- COUNTRIES -->
+    <!-- COUNTRIES SECTION -->
+
     <section class="section" id="countries">
 
         <div class="section-heading">
+
             <h2>Choose Your Study Destination</h2>
-            <p>Explore international study opportunities around the world.</p>
+
+            <p>
+                Explore international study opportunities around the world.
+            </p>
+
         </div>
 
         <div class="countries">
 
+            <!-- ITALY -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80"
                     alt="Italy and its historic architecture">
 
                 <div class="country-info">
+
                     <h3>🇮🇹 Study in Italy</h3>
-                    <p>Explore bachelor's, master's and other study opportunities.</p>
+
+                    <p>
+                        Explore bachelor's, master's and other study opportunities.
+                    </p>
+
                     <a href="countries/italy.html">Explore Italy →</a>
+
                 </div>
+
             </article>
 
+            <!-- GERMANY -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80"
                     alt="Germany city architecture">
 
                 <div class="country-info">
+
                     <h3>🇩🇪 Study in Germany</h3>
-                    <p>Discover study options in technology, business and engineering.</p>
+
+                    <p>
+                        Discover study options in technology, business and engineering.
+                    </p>
+
                     <a href="countries/germany.html">Explore Germany →</a>
+
                 </div>
+
             </article>
 
+            <!-- FRANCE -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
                     alt="Paris, France">
 
                 <div class="country-info">
+
                     <h3>🇫🇷 Study in France</h3>
-                    <p>Explore education opportunities across France.</p>
+
+                    <p>
+                        Explore education opportunities across France.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
+            <!-- UNITED KINGDOM -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80"
                     alt="London, United Kingdom">
 
                 <div class="country-info">
+
                     <h3>🇬🇧 Study in the UK</h3>
-                    <p>Discover degree programmes at UK institutions.</p>
+
+                    <p>
+                        Discover degree programmes at UK institutions.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
+            <!-- LATVIA -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=800&q=80"
                     alt="European city architecture">
 
                 <div class="country-info">
+
                     <h3>🇱🇻 Study in Latvia</h3>
-                    <p>Explore international education opportunities in Latvia.</p>
+
+                    <p>
+                        Explore international education opportunities in Latvia.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
+            <!-- LITHUANIA -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1549640376-8d7b7c1e5f53?auto=format&fit=crop&w=800&q=80"
                     alt="European university city">
 
                 <div class="country-info">
+
                     <h3>🇱🇹 Study in Lithuania</h3>
-                    <p>Discover courses and universities in Lithuania.</p>
+
+                    <p>
+                        Discover courses and universities in Lithuania.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
+            <!-- CHINA -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80"
                     alt="China architecture">
 
                 <div class="country-info">
+
                     <h3>🇨🇳 Study in China</h3>
-                    <p>Ask us about medical education, including MBBS, and other courses.</p>
+
+                    <p>
+                        Ask us about medical education, including MBBS, and other courses.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
+            <!-- MALTA -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80"
                     alt="Mediterranean coastal destination">
 
                 <div class="country-info">
-                    <h3>🇲🇹 Malta</h3>
-                    <p>Explore available courses and education options in Malta.</p>
+
+                    <h3>🇲🇹 Study in Malta</h3>
+
+                    <p>
+                        Explore available courses and education options in Malta.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
+            <!-- CYPRUS -->
+
             <article class="country-card">
+
                 <img
                     src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=800&q=80"
                     alt="Mediterranean island architecture">
 
                 <div class="country-info">
-                    <h3>🇨🇾 Cyprus</h3>
-                    <p>Find out about university and course opportunities in Cyprus.</p>
+
+                    <h3>🇨🇾 Study in Cyprus</h3>
+
+                    <p>
+                        Find out about university and course opportunities in Cyprus.
+                    </p>
+
                     <a href="#apply">Enquire Now →</a>
+
                 </div>
+
             </article>
 
         </div>
+
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES SECTION -->
+
     <section class="section services" id="services">
 
         <div class="section-heading">
+
             <h2>How We Can Help You</h2>
-            <p>Guidance for your international education journey.</p>
+
+            <p>
+                Guidance for your international education journey.
+            </p>
+
         </div>
 
         <div class="service-grid">
 
             <div class="service-card">
+
                 <div class="icon">🎓</div>
+
                 <h3>University Admission</h3>
-                <p>Explore suitable universities and courses for your profile.</p>
+
+                <p>
+                    Explore suitable universities and courses for your profile.
+                </p>
+
             </div>
 
             <div class="service-card">
+
                 <div class="icon">📄</div>
+
                 <h3>Document Guidance</h3>
-                <p>Get guidance on application documents and preparation.</p>
+
+                <p>
+                    Get guidance on application documents and preparation.
+                </p>
+
             </div>
 
             <div class="service-card">
+
                 <div class="icon">✈️</div>
+
                 <h3>Visa Guidance</h3>
-                <p>Understand the student visa application process.</p>
+
+                <p>
+                    Understand the student visa application process.
+                </p>
+
             </div>
 
             <div class="service-card">
+
                 <div class="icon">💬</div>
+
                 <h3>Student Counselling</h3>
-                <p>Discuss your study plans and available options with our team.</p>
+
+                <p>
+                    Discuss your study plans and available options with our team.
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT US -->
+
     <section class="section" id="about">
-        <div class="section-heading">
-            <h2>About Lets Fly Educational Consultancy</h2>
+
+        <div class="about-content">
+
+            <div class="section-heading">
+
+                <h2>About Lets Fly Educational Consultancy</h2>
+
+            </div>
 
             <p>
                 We help students explore international education opportunities
                 by providing guidance on universities, courses, applications
                 and student visa preparation.
             </p>
+
+            <p>
+                Our aim is to help students understand their study options
+                and prepare for the next step in their educational journey.
+            </p>
+
         </div>
+
     </section>
 
-    <!-- APPLY -->
+    <!-- APPLY SECTION -->
+
     <section class="section apply" id="apply">
+
         <div class="section-heading">
+
             <h2>Start Your Application</h2>
 
             <p>
@@ -475,17 +709,23 @@
             </p>
 
             <a class="button"
-               href="mailto:letsflyconsultancy@gmail.com?subject=Study%20Abroad%20Enquiry">
+                href="mailto:letsflyconsultancy@gmail.com?subject=Study%20Abroad%20Enquiry">
                 Send an Enquiry
             </a>
+
         </div>
+
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT SECTION -->
+
     <section class="contact" id="contact">
+
         <h2>Contact Lets Fly Educational Consultancy</h2>
 
-        <p>Have questions? Get in touch with our team.</p>
+        <p>
+            Have questions? Get in touch with our team.
+        </p>
 
         <p>
             Email:
@@ -494,15 +734,25 @@
             </a>
         </p>
 
-        <p>Location: Balkumari, Lalitpur, Nepal</p>
+        <p>
+            Location: Balkumari, Lalitpur, Nepal
+        </p>
+
     </section>
 
+    <!-- FOOTER -->
+
     <footer>
+
         <p>
-            © <span id="year"></span> Lets Fly Educational Consultancy.
+            &copy; <span id="year"></span>
+            Lets Fly Educational Consultancy.
             All rights reserved.
         </p>
+
     </footer>
+
+    <!-- JAVASCRIPT -->
 
     <script>
         document.getElementById("year").textContent =
@@ -510,4 +760,5 @@
     </script>
 
 </body>
+
 </html>
